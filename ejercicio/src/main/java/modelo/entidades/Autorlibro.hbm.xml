@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 11-feb-2021 18:18:32 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="biblioteca" dynamic-insert="false" dynamic-update="false" mutable="true" name="entidades.Autorlibro" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="autorlibro">
+        <composite-id class="entidades.AutorlibroId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="idAutor" type="int">
+                <column name="IdAutor"/>
+            </key-property>
+            <key-property name="codLibro" type="string">
+                <column length="10" name="CodLibro"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>
