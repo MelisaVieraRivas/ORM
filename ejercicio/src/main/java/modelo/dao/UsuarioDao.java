@@ -13,13 +13,15 @@ public class UsuarioDao {
 	try(Session se= Conexion.obtenerSesion()) {
 		t=se.beginTransaction();
 		
-		Usuario aut =new  Usuario (5, "Melisa", "Viera", "1200-20-00");
+		
+		//Usuario(IdUsuario, nombre, apellidos, Fecha nacimiento)
+		Usuario aut =new  Usuario (5, "Melisa", "Viera", null);
 		se.save(aut);
 		
 		t.commit();
 		
 		se.refresh(aut);
-		System.out.printf("Id Autor: "+aut.getIdAutor()+"Codigo Libro: "+aut.getCodLibro());
+		System.out.printf("Id Usuario: "+aut.getIdUsuario()+"  Nombre: "+aut.getNombre()+"  Apellidos:  "+aut.getApellidos()+" Fecha de nacimiento:   "+aut.getFechaNacimiento());
 		
 	}catch(Exception ex){
 		ex.printStackTrace();
@@ -30,7 +32,7 @@ public class UsuarioDao {
 	
 }
 
-public void borrarAutorLibro() {
+public void borrarUsuario() {
 	
 }
 
