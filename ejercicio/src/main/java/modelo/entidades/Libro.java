@@ -3,11 +3,10 @@ package modelo.entidades;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -30,6 +29,8 @@ public class Libro implements java.io.Serializable {
 	
 	@OneToMany
 	private Set<Ejemplar> ejemplars = new HashSet<Ejemplar>(0);
+	@ManyToMany
+	private Set<Autor> autores = new HashSet<Autor>(0);
 
 
 	public Libro() {

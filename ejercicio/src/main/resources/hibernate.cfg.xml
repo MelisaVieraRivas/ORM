@@ -3,29 +3,23 @@
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/biblioteca</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.show_sql">true</property>
-        
-        
-        
-        
-        <mapping class="modelo.entidades.Usuario" resource="/modelo/entidades/Usuario.hbm.xml"/>
-        <!-- AL no tener elemento que mapear da error , solo llamar si se mapea el objeto
-        <mapping class="modelo.entidades.Autor" resource="/modelo/entidades/Autor.hbm.xml"/>
- 		<mapping class="modelo.entidades.AutorLibro" resource="/modelo/entidades/Autorlibro.hbm.xml"/>
- 		<mapping class="modelo.entidades.ContactoUsuario" resource="/modelo/entidades/ContactoUsuario.hbm.xml"/>
- 		<mapping class="modelo.entidades.Ejemplar" resource="/modelo/entidades/Ejemplar.hbm.xml"/>
- 		<mapping class="modelo.entidades.Libro" resource="/modelo/entidades/Libro.hbm.xml"/>
- 		<mapping class="modelo.entidades.Prestamo" resource="/modelo/entidades/Prestamo.hbm.xml"/>
-        
- 		
- 		
- 		
- 		-->
-         		
-    </session-factory>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/biblioteca</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+
+
+		<mapping class="modelo.entidades.Libro"			resource="/modelo/entidades/Libro.hbm.xml" />
+		<mapping class="modelo.entidades.Ejemplar"			resource="/modelo/entidades/Ejemplar.hbm.xml" />
+		<mapping class="modelo.entidades.Usuario"			resource="/modelo/entidades/Usuario.hbm.xml" />
+		<mapping class="modelo.entidades.Prestamo"			resource="/modelo/entidades/Prestamo.hbm.xml" />
+
+
+
+		<mapping class="modelo.entidades.Autor"			resource="/modelo/entidades/Autor.hbm.xml" />
+		<!-- <mapping class="modelo.entidades.AutorLibro"			resource="/modelo/entidades/Autorlibro.hbm.xml" />
+		<mapping class="modelo.entidades.ContactoUsuario"			resource="/modelo/entidades/ContactoUsuario.hbm.xml" /> -->
+	</session-factory>
 </hibernate-configuration>
