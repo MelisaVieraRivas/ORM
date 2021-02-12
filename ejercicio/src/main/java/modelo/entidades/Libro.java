@@ -90,5 +90,13 @@ public class Libro implements java.io.Serializable {
 	public void setEjemplars(Set ejemplars) {
 		this.ejemplars = ejemplars;
 	}
+	public Set getAutores() {
+		return this.autores;
+	}
+
+	public void setAutores(Set autores) {
+		this.autores = autores;
+	}
+
 
 }
