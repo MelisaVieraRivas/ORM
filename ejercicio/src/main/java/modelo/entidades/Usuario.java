@@ -1,9 +1,7 @@
 package modelo.entidades;
-// Generated 11-feb-2021 18:18:30 by Hibernate Tools 5.2.12.Final
+// Generated 12-feb-2021 20:59:22 by Hibernate Tools 5.2.12.Final
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +27,6 @@ public class Usuario implements java.io.Serializable {
 	@Column (name="fechaNacimiento")
 	@Type(type = "date")
 	private Date fechaNacimiento;
-	
 
 	public Usuario() {
 	}

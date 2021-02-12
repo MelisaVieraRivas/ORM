@@ -9,5 +9,4 @@
   <table-filter match-catalog="biblioteca" match-name="libro"/>
   <table-filter match-catalog="biblioteca" match-name="prestamo"/>
   <table-filter match-catalog="biblioteca" match-name="usuario"/>
-  <table-filter match-catalog="biblioteca" match-name="usuario"/>
 </hibernate-reverse-engineering>

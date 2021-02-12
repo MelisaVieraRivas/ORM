@@ -1,10 +1,14 @@
 package modelo.entidades;
-// Generated 11-feb-2021 18:18:30 by Hibernate Tools 5.2.12.Final
+// Generated 12-feb-2021 20:59:22 by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -14,11 +18,19 @@ import javax.persistence.Table;
 @Table(name = "Libro")
 public class Libro implements java.io.Serializable {
 
+	@Id
+	@Column (name="codLibro")
 	private String codLibro;
+	@Column (name="titulo")
 	private String titulo;
+	@Column (name="editorial")
 	private String editorial;
+	@Column (name="precio")
 	private float precio;
-	private Set ejemplars = new HashSet(0);
+	
+	@OneToMany
+	private Set<Ejemplar> ejemplars = new HashSet<Ejemplar>(0);
+
 
 	public Libro() {
 	}
