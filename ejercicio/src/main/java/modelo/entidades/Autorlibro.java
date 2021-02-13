@@ -3,6 +3,7 @@ package modelo.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -11,7 +12,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Autoribro")
 public class Autorlibro implements java.io.Serializable {
-
+	
+	@Id
 	@Column (name="id")
 	private AutorlibroId id;
 

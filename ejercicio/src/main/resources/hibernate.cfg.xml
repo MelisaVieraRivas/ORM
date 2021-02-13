@@ -15,8 +15,9 @@
 		<mapping class="modelo.entidades.Ejemplar"			resource="/modelo/entidades/Ejemplar.hbm.xml" />
 		<mapping class="modelo.entidades.Usuario"			resource="/modelo/entidades/Usuario.hbm.xml" />
 		<mapping class="modelo.entidades.Prestamo"			resource="/modelo/entidades/Prestamo.hbm.xml" />
-				<mapping class="modelo.entidades.Autor"			resource="/modelo/entidades/Autor.hbm.xml" />
-		<mapping class="modelo.entidades.AutorLibro"			resource="/modelo/entidades/Autorlibro.hbm.xml" />
-		<mapping class="modelo.entidades.ContactoUsuario"			resource="/modelo/entidades/ContactoUsuario.hbm.xml" />
+		<mapping class="modelo.entidades.Autor"			resource="/modelo/entidades/Autor.hbm.xml" />
+		
+		
+
 	</session-factory>
 </hibernate-configuration>
