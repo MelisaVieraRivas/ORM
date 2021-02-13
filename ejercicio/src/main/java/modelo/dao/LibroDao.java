@@ -73,4 +73,13 @@ public class LibroDao {
 
 	}
 
+	public static void LibrpsPrestadosFecha() {
+	}
+
+	public static void LibrpsNombreAutor() {
+	}
+
+	public static void LibrosPorPrecio() {
+	}
+
 }
