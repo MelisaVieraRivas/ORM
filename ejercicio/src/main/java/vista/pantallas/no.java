@@ -1,6 +1,5 @@
 package vista.pantallas;
 
-import org.hibernate.Transaction;
 
 import modelo.dao.AutorDao;
 import modelo.dao.AutorLibroDao;
