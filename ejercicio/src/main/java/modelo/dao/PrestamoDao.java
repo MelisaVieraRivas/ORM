@@ -12,19 +12,18 @@ import modelo.entidades.Prestamo;
 public class PrestamoDao {
 
 
-	public static void crearPrestamo() {
+	public static void crearPrestamo(int idPrestamo, Ejemplar ejemplarByIdEjemplar, Ejemplar ejemplarByIdUsuario, Date fechaPrestamo,Date fechaDevolucion) {
 	Transaction t =null;
 	
 	try(Session se= Conexion.obtenerSesion()) {
 		t=se.beginTransaction();
 		//(int idPrestamo, Ejemplar ejemplarByIdEjemplar, Ejemplar ejemplarByIdUsuario, Date fechaPrestamo,Date fechaDevolucion)
 		Prestamo aut=new Prestamo();
-		aut.setIdPrestamo(1);
-		aut.setEjemplarByIdEjemplar(Ejemplar);
-		aut.setEjemplarByIdUsuario(Usuario);
-		SimpleDateFormat s= new SimpleDateFormat ("dd-MM-yyy");
-		aut.setFechaPrestamo(s.parse("10-10-2000"));
-		aut.setFechaDevolucion(s.parse("10-10-2000"));		
+		aut.setIdPrestamo(idPrestamo);
+		aut.setEjemplarByIdEjemplar(ejemplarByIdEjemplar);
+		aut.setEjemplarByIdUsuario(ejemplarByIdUsuario);
+		aut.setFechaPrestamo(fechaPrestamo);
+		aut.setFechaDevolucion(fechaDevolucion);		
 		se.save(aut);		
 		t.commit();		
 		se.refresh(aut);
@@ -35,19 +34,19 @@ public class PrestamoDao {
 		
 	}
 }
-	public static void borrarPrestamo() {
+	public static void borrarPrestamo(int idPrestamo, Ejemplar ejemplarByIdEjemplar, Ejemplar ejemplarByIdUsuario, Date fechaPrestamo,Date fechaDevolucion) {
 		Transaction t = null;
 
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			//(int idPrestamo, Ejemplar ejemplarByIdEjemplar, Ejemplar ejemplarByIdUsuario, Date fechaPrestamo,Date fechaDevolucion)
 			Prestamo aut=new Prestamo();
-			aut.setIdPrestamo(1);
-			aut.setEjemplarByIdEjemplar(Ejemplar);
-			aut.setEjemplarByIdUsuario(Usuario);
-			SimpleDateFormat s= new SimpleDateFormat ("dd-MM-yyy");
-			aut.setFechaPrestamo(s.parse("10-10-2000"));
-			aut.setFechaDevolucion(s.parse("10-10-2000"));			
+			aut.setIdPrestamo(idPrestamo);
+			aut.setEjemplarByIdEjemplar(ejemplarByIdEjemplar);
+			aut.setEjemplarByIdUsuario(ejemplarByIdUsuario);
+			//SimpleDateFormat s= new SimpleDateFormat ("dd-MM-yyy");
+			aut.setFechaPrestamo(fechaPrestamo);
+			aut.setFechaDevolucion(fechaDevolucion);			
 			se.delete(aut);
 			t.commit();
 			System.out.print("El Usuario ha sido borrado");
@@ -57,18 +56,17 @@ public class PrestamoDao {
 		}
 
 	}
-	public static void modificarPrestamo() {
+	public static void modificarPrestam(int idPrestamo, Ejemplar ejemplarByIdEjemplar, Ejemplar ejemplarByIdUsuario, Date fechaPrestamo,Date fechaDevolucion) {
 		Transaction t = null;
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			//(int idPrestamo, Ejemplar ejemplarByIdEjemplar, Ejemplar ejemplarByIdUsuario, Date fechaPrestamo,Date fechaDevolucion)
 			Prestamo aut=new Prestamo();
-			aut.setIdPrestamo(1);
-			aut.setEjemplarByIdEjemplar(Ejemplar);
-			aut.setEjemplarByIdUsuario(Usuario);
-			SimpleDateFormat s= new SimpleDateFormat ("dd-MM-yyy");
-			aut.setFechaPrestamo(s.parse("10-10-2000"));
-			aut.setFechaDevolucion(s.parse("10-10-2000"));
+			aut.setIdPrestamo(idPrestamo);
+			aut.setEjemplarByIdEjemplar(ejemplarByIdEjemplar);
+			aut.setEjemplarByIdUsuario(ejemplarByIdUsuario);
+			aut.setFechaPrestamo(fechaPrestamo);
+			aut.setFechaDevolucion(fechaDevolucion);
 			se.saveOrUpdate(aut);
 			se.getTransaction().commit();
 		} catch (Exception ex) {

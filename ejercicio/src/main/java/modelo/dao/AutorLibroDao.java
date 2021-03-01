@@ -10,15 +10,15 @@ import modelo.entidades.AutorlibroId;
 public class AutorLibroDao {
 	
 
-		public static void crearAutorLibro() {
+		public static void crearAutorLibro(int idAutor, String codLibro) {
 			Transaction t = null;
 
 			try (Session se = Conexion.obtenerSesion()) {
 				t = se.beginTransaction();
 				//AutorlibroId(int idAutor, String codLibro)
 				AutorlibroId aut= new AutorlibroId();
-				aut.setIdAutor(1);
-				aut.setCodLibro("codigol");
+				aut.setIdAutor(idAutor);
+				aut.setCodLibro(codLibro);
 				se.save(aut);
 				t.commit();
 				se.refresh(aut);
@@ -30,14 +30,14 @@ public class AutorLibroDao {
 			}
 		}
 
-		public static void borrarAutorLibro() {
+		public static void borrarAutorLibro(int idAutor, String codLibro) {
 			Transaction t = null;
 			try (Session se = Conexion.obtenerSesion()) {
 				t = se.beginTransaction();
 				//AutorlibroId(int idAutor, String codLibro)
 				AutorlibroId aut= new AutorlibroId();
-				aut.setIdAutor(1);
-				aut.setCodLibro("codigol");
+				aut.setIdAutor(idAutor);
+				aut.setCodLibro(codLibro);
 				se.delete(aut);
 				t.commit();
 				System.out.print("El Usuario ha sido borrado");
@@ -48,14 +48,14 @@ public class AutorLibroDao {
 
 		}
 
-		public static void modificarAutorLibro() {
+		public static void modificarAutorLibro(int idAutor, String codLibro) {
 			Transaction t = null;
 			try (Session se = Conexion.obtenerSesion()) {
 				t = se.beginTransaction();
 				//AutorlibroId(int idAutor, String codLibro)
 				AutorlibroId aut= new AutorlibroId();
-				aut.setIdAutor(1);
-				aut.setCodLibro("codigol");				
+				aut.setIdAutor(idAutor);
+				aut.setCodLibro(codLibro);			
 				se.saveOrUpdate(aut);
 				se.getTransaction().commit();
 			} catch (Exception ex) {

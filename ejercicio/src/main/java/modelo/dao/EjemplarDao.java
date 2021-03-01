@@ -10,18 +10,17 @@ import modelo.entidades.Prestamo;
 
 public class EjemplarDao {
 	
-	public static void crearEjemplar() {
+	public static void crearEjemplar(int idEjemplar, Libro libro, int numEjemplar, String estado) {
 		Transaction t =null;
 		
 		try(Session se= Conexion.obtenerSesion()) {
 			t=se.beginTransaction();		
 			//Ejemplar(int idEjemplar, Libro libro, int numEjemplar, String estado)
 			Ejemplar aut=new Ejemplar();
-			aut.setIdEjemplar(1);
+			aut.setIdEjemplar(idEjemplar);			
 			aut.setLibro(libro);
-			aut.setNumEjemplar(1);
-			aut.setEstado("ocupado");
-			
+			aut.setNumEjemplar(numEjemplar);
+			aut.setEstado(estado);			
 			se.save(aut);		
 			t.commit();		
 			se.refresh(aut);
@@ -32,14 +31,17 @@ public class EjemplarDao {
 			
 		}
 	}
-		public static void borrarEjemplar() {
+		public static void borrarEjemplar(int idEjemplar, Libro libro, int numEjemplar, String estado) {
 			Transaction t = null;
 
 			try (Session se = Conexion.obtenerSesion()) {
 				t = se.beginTransaction();
-				
-				
-				
+				//Ejemplar(int idEjemplar, Libro libro, int numEjemplar, String estado)
+				Ejemplar aut=new Ejemplar();
+				aut.setIdEjemplar(idEjemplar);			
+				aut.setLibro(libro);
+				aut.setNumEjemplar(numEjemplar);
+				aut.setEstado(estado);		
 				se.delete(aut);
 				t.commit();
 				System.out.print("El Usuario ha sido borrado");
@@ -49,20 +51,16 @@ public class EjemplarDao {
 			}
 
 		}
-		public static void modificarEjemplar() {
+		public static void modificarEjemplar(int idEjemplar, Libro libro, int numEjemplar, String estado) {
 			Transaction t = null;
 			try (Session se = Conexion.obtenerSesion()) {
 				t = se.beginTransaction();
-				//(int idPrestamo, Ejemplar ejemplarByIdEjemplar, Ejemplar ejemplarByIdUsuario, Date fechaPrestamo,Date fechaDevolucion)
-				Prestamo aut=new Prestamo();
-				aut.setIdPrestamo(1);
-				aut.setEjemplarByIdEjemplar(Ejemplar);
-				aut.setEjemplarByIdUsuario(Usuario);
-				SimpleDateFormat s= new SimpleDateFormat ("dd-MM-yyy");
-				aut.setFechaPrestamo(s.parse("10-10-2000"));
-				aut.setFechaDevolucion(s.parse("10-10-2000"));
-				
-				
+				//Ejemplar(int idEjemplar, Libro libro, int numEjemplar, String estado)
+				Ejemplar aut=new Ejemplar();
+				aut.setIdEjemplar(idEjemplar);			
+				aut.setLibro(libro);
+				aut.setNumEjemplar(numEjemplar);
+				aut.setEstado(estado);				
 				se.saveOrUpdate(aut);
 				se.getTransaction().commit();
 			} catch (Exception ex) {

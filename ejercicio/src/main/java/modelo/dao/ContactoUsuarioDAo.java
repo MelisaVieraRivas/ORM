@@ -7,7 +7,7 @@ import modelo.entidades.ContactousuarioId;
 
 public class ContactoUsuarioDAo {
 
-	public static void crearContactoUsuario() {
+	public static void crearContactoUsuario(int idUsuario, String email, String telefonoMovil, String telefonoFijo) {
 		Transaction t = null;
 
 		try (Session se = Conexion.obtenerSesion()) {
@@ -15,10 +15,10 @@ public class ContactoUsuarioDAo {
 			// ContactousuarioId(int idUsuario, String email, String telefonoMovil, String
 			// telefonoFijo)
 			ContactousuarioId aut = new ContactousuarioId();
-			aut.setIdUsuario(1);
-			aut.setEmail("melisaviera@hotmail.com");
-			aut.setTelefonoMovil("625148457");
-			aut.setTelefonoFijo("635152458");
+			aut.setIdUsuario(idUsuario);
+			aut.setEmail(email);
+			aut.setTelefonoMovil(telefonoMovil);
+			aut.setTelefonoFijo(telefonoFijo);
 			se.save(aut);
 			t.commit();
 			se.refresh(aut);
@@ -30,17 +30,17 @@ public class ContactoUsuarioDAo {
 		}
 	}
 
-	public static void borrarContactoUsuario() {
+	public static void borrarContactoUsuario(int idUsuario, String email, String telefonoMovil, String telefonoFijo) {
 		Transaction t = null;
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			// ContactousuarioId(int idUsuario, String email, String telefonoMovil, String
 			// telefonoFijo)
 			ContactousuarioId aut = new ContactousuarioId();
-			aut.setIdUsuario(1);
-			aut.setEmail("melisaviera@hotmail.com");
-			aut.setTelefonoMovil("625148457");
-			aut.setTelefonoFijo("635152458");
+			aut.setIdUsuario(idUsuario);
+			aut.setEmail(email);
+			aut.setTelefonoMovil(telefonoMovil);
+			aut.setTelefonoFijo(telefonoFijo);
 			se.delete(aut);
 			t.commit();
 			System.out.print("El Usuario ha sido borrado");
@@ -51,17 +51,17 @@ public class ContactoUsuarioDAo {
 
 	}
 
-	public static void modificarContactoUsuario() {
+	public static void modificarContactoUsuario(int idUsuario, String email, String telefonoMovil, String telefonoFijo) {
 		Transaction t = null;
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			// ContactousuarioId(int idUsuario, String email, String telefonoMovil, String
 			// telefonoFijo)
 			ContactousuarioId aut = new ContactousuarioId();
-			aut.setIdUsuario(1);
-			aut.setEmail("melisaviera@hotmail.com");
-			aut.setTelefonoMovil("625148457");
-			aut.setTelefonoFijo("635152458");
+			aut.setIdUsuario(idUsuario);
+			aut.setEmail(email);
+			aut.setTelefonoMovil(telefonoMovil);
+			aut.setTelefonoFijo(telefonoFijo);
 			se.saveOrUpdate(aut);
 			se.getTransaction().commit();
 		} catch (Exception ex) {

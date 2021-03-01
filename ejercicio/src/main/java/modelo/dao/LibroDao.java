@@ -1,5 +1,7 @@
 package modelo.dao;
 
+
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.configuracion.Conexion;
@@ -7,18 +9,18 @@ import modelo.entidades.Libro;
 
 public class LibroDao {
 
-	public static void crearLibro() {
+	public static void crearLibro(String codLibro, String titulo, String editorial, float precio) {
 		Transaction t = null;
 
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			// Libro(String codLibro, String titulo, String editorial, float precio, Set
-			// ejemplars)
+			 //ejemplars)
 			Libro aut = new Libro();
-			aut.setCodLibro("codigo");
-			aut.setTitulo("titulo");
-			aut.setEditorial("editorial");
-			aut.setPrecio((float) 3.3);
+			aut.setCodLibro(codLibro);
+			aut.setTitulo(titulo);
+			aut.setEditorial(editorial);
+			aut.setPrecio((float) precio);
 			se.save(aut);
 			t.commit();
 			se.refresh(aut);
@@ -31,7 +33,7 @@ public class LibroDao {
 		}
 	}
 
-	public static void borrarLibro() {
+	public static void borrarLibro(String codLibro, String titulo, String editorial, float precio) {
 		Transaction t = null;
 
 		try (Session se = Conexion.obtenerSesion()) {
@@ -39,10 +41,10 @@ public class LibroDao {
 			// Libro(String codLibro, String titulo, String editorial, float precio, Set
 			// ejemplars)
 			Libro aut = new Libro();
-			aut.setCodLibro("codigo");
-			aut.setTitulo("titulo");
-			aut.setEditorial("editorial");
-			aut.setPrecio((float) 3.3);
+			aut.setCodLibro(codLibro);
+			aut.setTitulo(titulo);
+			aut.setEditorial(editorial);
+			aut.setPrecio((float) precio);
 			se.delete(aut);
 			t.commit();
 			System.out.print("El Libro ha sido borrado");
@@ -53,17 +55,17 @@ public class LibroDao {
 
 	}
 
-	public static void modificarLibro() {
+	public static void modificarLibro(String codLibro, String titulo, String editorial, float precio) {
 		Transaction t = null;
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			// Libro(String codLibro, String titulo, String editorial, float precio, Set
 			// ejemplars)
 			Libro aut = new Libro();
-			aut.setCodLibro("codigo1");
-			aut.setTitulo("titulo1");
-			aut.setEditorial("editorial1");
-			aut.setPrecio((float) 3.2);
+			aut.setCodLibro(codLibro);
+			aut.setTitulo(titulo);
+			aut.setEditorial(editorial);
+			aut.setPrecio((float) precio);
 			se.saveOrUpdate(aut);
 			se.getTransaction().commit();
 		} catch (Exception ex) {
@@ -72,11 +74,13 @@ public class LibroDao {
 		}
 
 	}
-
-	public static void LibrpsPrestadosFecha() {
+	public static void LibrosPorId() {
 	}
 
-	public static void LibrpsNombreAutor() {
+	public static void LibrosPrestadosFecha() {
+	}
+
+	public static void LibrosNombreAutor() {
 	}
 
 	public static void LibrosPorPrecio() {

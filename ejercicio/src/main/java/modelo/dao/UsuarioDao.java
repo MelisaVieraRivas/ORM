@@ -11,18 +11,17 @@ import modelo.entidades.Usuario;
 
 public class UsuarioDao {
 
-	public static void crearUsuario() {
+	public static void crearUsuario(int idUsuario, String nombre, String apellidos, Date fechaNacimiento) {
 		Transaction t = null;
 
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
-			// Usuario(IdUsuario, nombre, apellidos, Fecha nacimiento)
+			//(int idUsuario, String nombre, String apellidos, Date fechaNacimiento)
 			Usuario aut = new Usuario();
-			aut.setIdUsuario(1);
-			aut.setNombre("Melisa");
-			aut.setApellidos("Viera");
-			SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyy");
-			aut.setFechaNacimiento(s.parse("10-10-2000"));
+			aut.setIdUsuario(idUsuario);
+			aut.setNombre(nombre);
+			aut.setApellidos(apellidos);
+			aut.setFechaNacimiento(fechaNacimiento);
 			se.save(aut);
 			t.commit();
 			se.refresh(aut);
@@ -35,18 +34,17 @@ public class UsuarioDao {
 		}
 	}
 
-	public static void borrarUsuario() {
+	public static void borrarUsuario(int idUsuario, String nombre, String apellidos, Date fechaNacimiento)  {
 		Transaction t = null;
 
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			// Usuario(IdUsuario, nombre, apellidos, Fecha nacimiento)
 			Usuario aut = new Usuario();
-			aut.setIdUsuario(1);
-			aut.setNombre("Melisa");
-			aut.setApellidos("Viera");
-			SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyy");
-			aut.setFechaNacimiento(s.parse("10-10-2000"));
+			aut.setIdUsuario(idUsuario);
+			aut.setNombre(nombre);
+			aut.setApellidos(apellidos);
+			aut.setFechaNacimiento(fechaNacimiento);
 			se.delete(aut);
 			t.commit();
 			System.out.print("El Usuario ha sido borrado");
@@ -57,16 +55,17 @@ public class UsuarioDao {
 
 	}
 
-	public static void modificarUsuario() {
+	public static void modificarUsuario(int idUsuario, String nombre, String apellidos, Date fechaNacimiento)  {
 		Transaction t = null;
 		try (Session se = Conexion.obtenerSesion()) {
 			t = se.beginTransaction();
 			Usuario aut = new Usuario();
-			aut.setIdUsuario(1);
-			aut.setNombre("Melisa");
-			aut.setApellidos("Viera");
-			SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyy");
-			aut.setFechaNacimiento(s.parse("10-10-2000"));
+			aut.setIdUsuario(idUsuario);
+			aut.setNombre(nombre);
+			aut.setApellidos(apellidos);
+			aut.setFechaNacimiento(fechaNacimiento);
+			//SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyy");
+			//aut.setFechaNacimiento(s.parse("10-10-2000"));
 			se.saveOrUpdate(aut);
 			se.getTransaction().commit();
 		} catch (Exception ex) {
